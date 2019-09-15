@@ -1,14 +1,14 @@
 .listItem__wrapper {
     list-style: none;
-    padding: 50px 20px; 
+    padding: 50px 20px;
     display: flex;
     align-items: center;
 }
 .listItem__image {
     flex-shrink: 0;
     margin-right: 50px;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height:200px;
     border-radius: 50%;
 }
 .listItem__name {
