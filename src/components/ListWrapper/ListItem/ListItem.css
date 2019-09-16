@@ -20,7 +20,8 @@
     font-size:20px;
 }
 .listItem__button {
-    background: none;
+    font-size: 10px;
+    text-decoration: none;
     border: 0.5px solid #5c2a02;
     padding: 10px;
 }
