@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ListItem.css';
 
 const ListItem = ({name, description, image, twitterLink}) => {
@@ -10,6 +11,15 @@ const ListItem = ({name, description, image, twitterLink}) => {
             <a href={twitterLink} className="listItem__button">Visit Twitter Page</a>
         </div>
     </li>);
+};
+ListItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    image: PropTypes.string.isRequired,
+    twitterLink: PropTypes.string.isRequired,
+};
+ListItem.defaultProps = {
+    description: "one of the react creators",
 };
 
 export default ListItem; 
