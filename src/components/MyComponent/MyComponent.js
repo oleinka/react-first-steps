@@ -1,9 +1,23 @@
 import React from 'react';
 
 class MyComponent extends React.Component {
+    state = {
+        text: '',
+    }
+    handleChange = (event) => {
+        this.setState({ text: event.target.value.toUpperCase() });
+    }
+
     render () {
         return (
-        <h1>Hello world</h1>
+        <>
+            <input 
+                placeholder='your text'
+                onChange={this.handleChange}
+                value={this.state.text}
+            />
+            <h1>{this.state.text}</h1>
+        </>
     )
         }
 }
