@@ -46,8 +46,10 @@ class App extends React.Component {
             }
             
             this.setState(prevState => ({
-                items:[...prevState.state.items, newItem],
+                items:[...prevState.items, newItem],
             }));
+
+            e.target.reset();
         }
 
         render () {
