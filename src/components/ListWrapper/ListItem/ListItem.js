@@ -7,24 +7,34 @@ const ListItem = ({
     description, 
     image, 
     twitterLink
-}) => (
+}) => {
+
+    const ImageTag = image ? 'img' : 'div';
+
+return (
 <li className={styles.wrapper}>
-    <img src={image} className={styles.image} alt={name} />
+    <ImageTag 
+        src={image} 
+        className={image ? styles.image : styles.imageNone} 
+        alt={name}
+    />
     <div>
         <h2 className={styles.name}><b>{name}</b></h2>
         <p className={styles.description}>{description}</p>
         <a href={twitterLink} target='_blank' rel="noopener noreferrer" className={styles.button}>Visit Twitter Page</a>
     </div>
-</li>);
+</li>)
+};
 
 ListItem.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     twitterLink: PropTypes.string.isRequired,
 };
 ListItem.defaultProps = {
     description: "one of the react creators",
+    image: null,
 };
 
 export default ListItem; 

@@ -23,6 +23,12 @@
     height: 170px;
     border-radius: 50%;
 }
+.imageNone {
+    @extend .image;
+    background-image: url(https://picsum.photos/200/300);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .name {
     margin:0;
     color: #165a79;
