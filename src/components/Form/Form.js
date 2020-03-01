@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Form.module.scss'; 
 
 const Form = ({submitFn}) => (
-    <form className={styles.wrapper} onSubmit={submitFn}>
+    <form autoComplete='off' className={styles.wrapper} onSubmit={submitFn}>
         <h3>Add new Twitter Account</h3>
         <input 
             placeholder="name" 
