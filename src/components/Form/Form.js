@@ -1,8 +1,8 @@
 import React from 'react';
-import './Form.css'; 
+import styles from './Form.module.scss'; 
 
 const Form = ({submitFn}) => (
-    <form className="form__wrapper" onSubmit={submitFn}>
+    <form className={styles.wrapper} onSubmit={submitFn}>
         <h3>Add new Twitter Account</h3>
         <input placeholder="name" name="name"/>
         <input placeholder="link" name="link"/>
