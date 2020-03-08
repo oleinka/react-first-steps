@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Form.module.scss'; 
 import Input from '../Input/Input';
+import Button from '../Button/Button';
 
 const Form = ({submitFn}) => (
     <div className={styles.wrapper}>
@@ -25,11 +26,7 @@ const Form = ({submitFn}) => (
                 label="Description"
                 maxLength={30}
             />
-            <button 
-                className={styles.button}
-                type="submit">
-                add new item
-            </button>
+            <Button>add new item</Button>
         </form>
     </div>
 );
