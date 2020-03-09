@@ -1,7 +1,8 @@
 import React from 'react';
-import ListWrapper from './components/ListWrapper/ListWrapper';
+import List from '../../components/List/List';
 import './index.css';
-import Form from './components/Form/Form';
+import Form from '../../components/Form/Form';
+import './index.css';
 
 const initialStateItems = [    
     {
@@ -30,7 +31,7 @@ const initialStateItems = [
     },
 ]
 
-class App extends React.Component {
+class Root extends React.Component {
         state = {
             items: [...initialStateItems],
         }
@@ -55,7 +56,7 @@ class App extends React.Component {
         render () {
             return (
             <div>
-                <ListWrapper 
+                <List 
                 items={this.state.items}
                 />
                 <Form submitFn={this.addItem}/>
@@ -64,4 +65,4 @@ class App extends React.Component {
         }
     }
 
-export default App; 
+export default Root; 
