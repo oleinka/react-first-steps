@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from './Button.module.scss';
 
-const Button = ({children, href}) => (
+const Button = ({children, href, secondary}) => {
+
+    const buttonClass = secondary ? styles.secondary : styles.button;
+
+return (
 <>
 {
 href ? 
@@ -10,18 +14,20 @@ href ?
     href={href}
     target='_blank' 
     rel="noopener noreferrer" 
-    className={styles.button}>
+    className={buttonClass}>
     {children}
 </a>
 ):(
 <button 
-    className={styles.button}
+    className={buttonClass}
     type="submit">
     {children}
 </button>
 )
 }
 </>
-);
+)
+
+};
 
 export default Button;

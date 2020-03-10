@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './Navigation.module.scss';
+import styles from './HeaderNav.module.scss';
 
-const Navigation = () => (
+const HeaderNav = () => (
     <nav>
         <ul className={styles.wrapper}>
             <li className={styles.navItem}>
@@ -24,4 +24,4 @@ const Navigation = () => (
     </nav>
 );
 
-export default Navigation;
+export default HeaderNav;
