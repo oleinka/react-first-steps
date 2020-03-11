@@ -5,6 +5,7 @@ import ArticlesView from '../ArticlesView/ArticlesView';
 import NotesView from '../NotesView/NotesView';
 import TwittersView from '../TwittersView/TwittersView';
 import Header from '../../components/Header/Header';
+import Modal from '../../components/Modal/Modal';
 
 const initialStateItems = [    
     {
@@ -65,6 +66,7 @@ class Root extends React.Component {
                     <Route path='/articles' component={ArticlesView}/>
                     <Route path='/notes' component={NotesView}/>
                 </Switch>
+                <Modal/>
                 </>
             </BrowserRouter>
             )
