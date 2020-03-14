@@ -9,4 +9,12 @@
     background-color: white;
     box-shadow: 0 20px 40px -10px rgba($color:#818181, $alpha: 1.0);
     position: fixed;
+
+    .closeBtn {
+    position: absolute;
+    right: 30px;
+    background-color: #1e58ff;
+    color: white;
+    border: none;
+    }
 }
