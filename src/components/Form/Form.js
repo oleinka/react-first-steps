@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './Form.module.scss'; 
 import Input from '../Input/Input';
 import Button from '../Button/Button';
-import Title from '../Title/Title'
+import Title from '../Title/Title';
+import RadioButton from './RadioButton';
 
 const types = {
     twitter:'twitter',
@@ -31,27 +32,25 @@ class Form extends React.Component {
             <Title>Add new {description[this.state.activeOption]}</Title>
             <form autoComplete='off' className={styles.form} onSubmit={this.props.submitFn}>
                 <div className={styles.radioInput}>
-                    <input
+                    <RadioButton
                         id={types.twitter}
-                        type='radio'
                         checked={this.state.activeOption === types.twitter}
-                        onChange={()=>this.handleRadioButtonChange(types.twitter)}
-                    />
-                    <label htmlFor={types.twitter}>Twitter</label>
-                    <input
+                        changeFn={()=>this.handleRadioButtonChange(types.twitter)}
+                    >
+                        Twitter
+                    </RadioButton>
+                    <RadioButton
                         id={types.article}
-                        type='radio'
                         checked={this.state.activeOption === types.article}
-                        onChange={()=>this.handleRadioButtonChange(types.article)}
-                    />
-                    <label htmlFor={types.article}>Article</label>
-                    <input
+                        changeFn={()=>this.handleRadioButtonChange(types.article)}
+                    >Article
+                    </RadioButton>
+                    <RadioButton
                         id={types.note}
-                        type='radio'
                         checked={this.state.activeOption === types.note}
-                        onChange={()=>this.handleRadioButtonChange(types.note)}
-                    />
-                    <label htmlFor={types.note}>Twitter</label>
+                        changeFn={()=>this.handleRadioButtonChange(types.note)}
+                    >Note
+                    </RadioButton>
                 </div>
                 <Input
                     name='name'
