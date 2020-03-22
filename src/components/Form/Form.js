@@ -4,6 +4,7 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 import Title from '../Title/Title';
 import RadioButton from './RadioButton';
+import AppContext from '../../context';
 
 const types = {
     twitter:'twitter',
@@ -30,9 +31,11 @@ class Form extends React.Component {
         const {activeOption} = this.state;
 
         return (
+        <AppContext.Consumer>
+        {(context)=>(
             <div className={styles.wrapper}>
             <Title>Add new {description[activeOption]}</Title>
-            <form autoComplete='off' className={styles.form} onSubmit={this.props.submitFn}>
+            <form autoComplete='off' className={styles.form} onSubmit={context.addItem}>
                 <div className={styles.radioInput}>
                     <RadioButton
                         id={types.twitter}
@@ -75,6 +78,8 @@ class Form extends React.Component {
                 <Button>add new item</Button>
             </form>
         </div>
+        )}
+        </AppContext.Consumer>
     );
     }
 
