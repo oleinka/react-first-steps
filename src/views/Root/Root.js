@@ -6,6 +6,7 @@ import NotesView from '../NotesView/NotesView';
 import TwittersView from '../TwittersView/TwittersView';
 import Header from '../../components/Header/Header';
 import Modal from '../../components/Modal/Modal';
+import AppContext from '../../context' ;
 
 const initialStateItems = [    
     {
@@ -38,6 +39,7 @@ class Root extends React.Component {
         state = {
             items: [...initialStateItems],
             isModalOpen: false,
+            name: 'Marta',
         }
 
         addItem = (e) => {
@@ -73,7 +75,7 @@ class Root extends React.Component {
             const {isModalOpen} = this.state;
             return (
             <BrowserRouter>
-                <>
+                <AppContext.Provider value={this.state.name}>
                 <Header openModalFn={this.openModal}/>
                 <Switch>
                     <Route exact path='/' component={TwittersView}/>
@@ -81,7 +83,7 @@ class Root extends React.Component {
                     <Route path='/notes' component={NotesView}/>
                 </Switch>
                 { isModalOpen && <Modal closeModalFn={this.closeModal}/> }
-                </>
+                </AppContext.Provider>
             </BrowserRouter>
             )
         }
