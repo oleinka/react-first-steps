@@ -45,7 +45,7 @@ class Form extends React.Component {
         {(context)=>(
             <div className={styles.wrapper}>
             <Title>Add new {description[type]}</Title>
-            <form autoComplete='off' className={styles.form} onSubmit={context.addItem}>
+            <form autoComplete='off' className={styles.form} onSubmit={(e) => context.addItem(e,this.state)}>
                 <div className={styles.radioInput}>
                     <RadioButton
                         id={types.twitter}
